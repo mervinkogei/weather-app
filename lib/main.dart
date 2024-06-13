@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:weather_app/Screens/home.dart';
 import 'package:weather_app/Screens/splashscreen.dart';
 import 'package:weather_app/providers/auth.dart';
 
@@ -38,18 +39,10 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        // ChangeNotifierProvider.value(
-        //   value: TasksProvider(),
-        // ),
         ChangeNotifierProvider.value(
           value: Auth(),
         ),
-        // ChangeNotifierProvider.value(
-        //   value: UserProvider(),
-        // ),
-        // ChangeNotifierProvider.value(
-        //   value: NotesProvider(),
-        // ),
+       
       ],
       child: Consumer<Auth>(
         builder: (context, auth, _) {
@@ -57,13 +50,7 @@ class _LandingPageState extends State<LandingPage> {
             debugShowCheckedModeBanner: false,
             home: const SplashScreen(),
             routes: {
-              // AddTask.routeName: (ctx) => const AddTask(),
-              // UserTaskScreen.routeName: (ctx) => const UserTaskScreen(),
-              // UserAddScreen.routeName: (ctx) => const UserAddScreen(),
-              // UserDetailScreen.routeName: (ctx) => const UserDetailScreen(),
-              // Tabs.routeName: (ctx) => const Tabs(),
-              // UserNoteScreen.routeName: (ctx) => const UserNoteScreen(),
-              // AddNote.routeName: (ctx) => const AddNote(),
+              '/home' : (context) => const HomeScreen()
             },
           );
         },
