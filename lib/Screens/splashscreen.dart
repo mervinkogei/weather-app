@@ -30,12 +30,12 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/delivery.png',
+              'assets/logo_weather.png',
               width: 250,
               height: 250,
             ),
             const SizedBox(height: 25,),
-            const Text('Welcome to Food Delivery App')
+            const Text('Welcome to Weather Forecast App')
           ],
         ),
       ),
