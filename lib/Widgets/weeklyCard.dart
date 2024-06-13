@@ -1,90 +1,47 @@
 import 'package:flutter/material.dart';
 
-class WeatherInfoCard extends StatelessWidget {
-  const WeatherInfoCard({super.key});
+class WeeklyCard extends StatelessWidget {
+  final String week;
+  const WeeklyCard({super.key, required this.week});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white.withOpacity(0.1)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SizedBox(
+          width: 70,
+          child: Text(
+            week,
+            style: const TextStyle(color: Colors.white),
+          ),
+        ),
+        SizedBox(
+          width: 120,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(
-                Icons.wind_power_outlined,
-                color: Colors.grey,
+              Image.asset('assets/thunder.png', height: 30),
+              const Text(
+                "Thunder",
+                style: TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 5),
-              Text(
-                "35 km/h",
-                style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600),
-              ),
-              Text(
-                "Wind",
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              )
             ],
           ),
-          Container(
-            height: 30,
-            width: 2,
-            color: Colors.grey,
-          ),
-          const Column(
-            children: [
-              Icon(
-                Icons.water_drop,
-                color: Colors.blue,
-              ),
-              SizedBox(height: 5),
-              Text(
-                "24 %",
-                style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600),
-              ),
-              Text(
-                "Humidity",
-                style: TextStyle(color: Colors.grey, fontSize: 14),
+        ),
+        RichText(
+            text: const TextSpan(
+                text: '+19°',
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                children: [
+              TextSpan(
+                text: '+17°',
+                style:
+                    TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
               )
-            ],
-          ),
-          Container(
-            height: 30,
-            width: 2,
-            color: Colors.grey,
-          ),
-          const Column(
-            children: [
-              Icon(
-                Icons.water,
-                color: Colors.grey,
-              ),
-              SizedBox(height: 5),
-              Text(
-                "83%",
-                style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600),
-              ),
-              Text(
-                "Rain",
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              )
-            ],
-          ),
-        ],
-      ),
+            ])),
+      ],
     );
   }
 }
