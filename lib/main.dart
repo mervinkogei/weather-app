@@ -50,7 +50,7 @@ class _LandingPageState extends State<LandingPage> {
             debugShowCheckedModeBanner: false,
             home: const SplashScreen(),
             routes: {
-              '/home' : (context) => const HomeScreen()
+              '/home' : (context) => HomeScreen()
             },
           );
         },

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:weather_app/Widgets/weatherInfoCard.dart';
+import 'package:weather_app/Widgets/weeklyCard.dart';
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -11,29 +12,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('HomeScreen'),
-      ),
-    );
-  }
-}
-
-class SevenDayWeatherView extends StatelessWidget {
-  SevenDayWeatherView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-          ),
-        ),
         centerTitle: true,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -61,6 +41,7 @@ class SevenDayWeatherView extends StatelessWidget {
               ))
         ],
       ),
+      backgroundColor: Colors.white,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
@@ -73,20 +54,20 @@ class SevenDayWeatherView extends StatelessWidget {
                 children: [
                   const Text(
                     "Tomorrow",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: TextStyle(color: Colors.black, fontSize: 20),
                   ),
                   RichText(
                       text: const TextSpan(
                           text: '25',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 60,
                               fontWeight: FontWeight.w600),
                           children: [
                         TextSpan(
                           text: '/17°',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 30,
                               fontWeight: FontWeight.w600),
                         )
@@ -100,6 +81,7 @@ class SevenDayWeatherView extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 20),
+          const Divider(),
           const WeatherInfoCard(),
           const SizedBox(height: 20),
           ListView.separated(

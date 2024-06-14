@@ -13,7 +13,7 @@ class WeeklyCard extends StatelessWidget {
           width: 70,
           child: Text(
             week,
-            style: const TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.black),
           ),
         ),
         SizedBox(
