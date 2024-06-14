@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(width: 5),
             Text(
-              "7 Days",
+              " Weather App",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
-          const SizedBox(height: 50),
+          const SizedBox(height: 30),
           Row(
             children: [
               Image.asset('assets/sunny.png', height: 150),
@@ -84,6 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
           const Divider(),
           const WeatherInfoCard(),
           const SizedBox(height: 20),
+          const Center(child: Text('Weather Forecast Prediction', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),)),
+          const SizedBox(height: 15,),
           ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -99,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  List<String> weekDays = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
+  List<String> weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 }
 
 

@@ -9,7 +9,7 @@ class WeatherInfoCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.white.withOpacity(0.1)),
+          color: Colors.blueGrey.withOpacity(0.1)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

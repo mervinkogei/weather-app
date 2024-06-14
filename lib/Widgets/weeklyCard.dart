@@ -10,10 +10,10 @@ class WeeklyCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(
-          width: 70,
+          width: 85,
           child: Text(
             week,
-            style: const TextStyle(color: Colors.black),
+            style:  const TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
           ),
         ),
         SizedBox(
@@ -24,7 +24,7 @@ class WeeklyCard extends StatelessWidget {
               Image.asset('assets/thunder.png', height: 30),
               const Text(
                 "Thunder",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.lightBlue),
               ),
             ],
           ),
@@ -33,7 +33,7 @@ class WeeklyCard extends StatelessWidget {
             text: const TextSpan(
                 text: '+19°',
                 style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                    TextStyle(color: Colors.amber, fontWeight: FontWeight.w600),
                 children: [
               TextSpan(
                 text: '+17°',
